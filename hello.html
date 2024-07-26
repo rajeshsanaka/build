@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Layout</title>
+    
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-image: url();
+          height: 100%;
+            background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+        }
+        .navbar-custom {
+            background: linear-gradient(to right, #025361, #07bfdf);
+        }
+        .profile-img {
+            width: 50px;
+            height: 50px;
+            object-fit: cover;
+        }
+        .cot{
+            margin-top: 20px;
+            height: 550px;
+            width: 700px;
+        }
+        .middle{
+            margin-top: 200px;
+        }
+        .but{
+            margin-top: 100px;
+           
+        }
+        .hel{
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="d-flex flex-column min-vh-100">
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-dark navbar-custom shadow-lg">
+            <div class="container-fluid">
+                <a class="navbar-brand font-weight-bold" href="#">PlanCrafters</a>
+                <div class="ml-auto d-flex align-items-center">
+                    <img src="https://placehold.co/40x40/eeeeee/4B5563/png?text=Profile" alt="Profile" class="rounded-circle mr-2">
+                    <span class="font-weight-bold">John Doe</span>
+                </div>
+            </div>
+        </nav>
+
+        <div class="d-flex flex-grow-1">
+            <!-- Left Side: Search Bar and Customer Details -->
+            <div class="col-md-3 p-4  border-right" style="background-color:#07bfdf;">
+                <div class="mb-4">
+                    <input type="text" placeholder="Search..." class="form-control shadow-sm" oninput="filterProfiles(this.value)"></a>
+                </div>
+                <div id="customer-list">
+                    <div class="d-flex align-items-center mb-4 profile-item">
+                        <a href="./sampl.html">
+                        <img src="https://placehold.co/50x50/eeeeee/4B5563/png?text=Profile" alt="Profile" class="rounded-circle mr-3 profile-img"></a>
+                        <div>
+                            <h2 class="h6 font-weight-bold mb-0">John Doe</h2>
+                            <p class="text-muted mb-0">Customer Location: Unnava</p>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center mb-4 profile-item">
+                        <img src="https://placehold.co/50x50/eeeeee/4B5563/png?text=Profile" alt="Profile" class="rounded-circle mr-3 profile-img">
+                        <div>
+                            <h2 class="h6 font-weight-bold mb-0">Jane Smith</h2>
+                            <p class="text-muted mb-0">Customer Location: Guntur</p>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center mb-4 profile-item">
+                        <img src="https://placehold.co/50x50/eeeeee/4B5563/png?text=Profile" alt="Profile" class="rounded-circle mr-3 profile-img">
+                        <div>
+                            <h2 class="h6 font-weight-bold mb-0">Alice Johnson</h2>
+                            <p class="text-muted mb-0">Customer Location: Etukuru</p>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center mb-4 profile-item">
+                        <img src="https://placehold.co/50x50/eeeeee/4B5563/png?text=Profile" alt="Profile" class="rounded-circle mr-3 profile-img">
+                        <div>
+                            <h2 class="h6 font-weight-bold mb-0">Bob Brown</h2>
+                            <p class="text-muted mb-0">Customer Location: Vijayawada</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Middle: Image -->
+            
+            <div class="col-md-6  align-items-center justify-content-center  ">
+                <img src="/vedio.gif" alt="Yor Design" class="cot" >
+                <form action="post"><input type="text" placeholder="Enter your promot" class="hel" style="padding-top: 20px;margin-top: 20px; margin-left: 100px; text-align:left  ; color: black;  width: 600px; border-radius: 30px; border-color: #2575fc;"></form>
+            </div>
+
+            <!-- Right Side: Buttons -->
+            <div class="col-md-3 p-4 but">
+                <div class="d-flex flex-column space-y-4">
+                    <button class="btn btn-primary btn-lg mb-3 shadow-sm">3D View</button>
+                    <button class="btn btn-success btn-lg mb-3 shadow-sm">2D View</button>
+                    <button class="btn btn-danger btn-lg mb-3 shadow-sm">Edit in 2D</button>
+                    <button class="btn btn-warning btn-lg mb-3 shadow-sm">Settings</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const profiles = [
+        { name: "John Doe", location: "Guntur" },
+    { name: "Jane Smith", location: "Guntur" },
+    { name: "Alice Johnson", location: "CH Peta" },
+    { name: "Rajesh", location: "lenu" },
+    { name: "Durga", location: "Unnava" },
+    { name: "Mahi", location: "Guntur" },
+    { name: "Bala", location: "Tenali" },
+    { name: "Sam", location: "Chebrolu" }
+        ];
+
+        function filterProfiles(query) {
+            const customerList = document.getElementById('customer-list');
+            customerList.innerHTML = '';
+
+            const filteredProfiles = profiles.filter(profile => profile.location.toLowerCase().includes(query.toLowerCase()));
+
+            filteredProfiles.forEach(profile => {
+                const profileItem = document.createElement('div');
+                profileItem.className = 'd-flex align-items-center mb-4 profile-item';
+                profileItem.innerHTML = `
+                   <a href="https://www.w3schools.com/html/tryit.asp?filename=tryhtml_links_image"> <img src="https://placehold.co/50x50/eeeeee/4B5563/png?text=Profile" alt="Profile" class="rounded-circle mr-3 profile-img"></a>
+                    <div>
+                        <h2 class="h6 font-weight-bold mb-0">${profile.name}</h2>
+                        <p class="text-muted mb-0">Customer Location: ${profile.location}</p>
+                    </div>`;
+                customerList.appendChild(profileItem);
+            });
+        }
+    </script>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

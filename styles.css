@@ -1,0 +1,166 @@
+ body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #333;
+            padding: 10px 20px;
+            color: #fff;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .navbar .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar .logo img {
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        .navbar .name {
+            font-size: 1.5em;
+        }
+
+        .navbar .user-profile {
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar .user-profile img {
+            height: 40px;
+            border-radius: 50%;
+            margin-left: 10px;
+        }
+
+        /* Container for Sidebar and Main Content */
+        .container {
+            display: flex;
+            flex: 1;
+            overflow: hidden;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 250px;
+            background-color: #f4f4f4;
+            padding: 20px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+            box-sizing: border-box;
+            overflow-y: auto;
+        }
+
+        .sidebar .search-bar input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .sidebar .input-tags input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        /* Main Content */
+        .main-content {
+         
+         
+        }
+
+        /* 3D House Plan */
+        .house-plan {
+          
+            bottom: 20px;
+            right: 20px;
+            width: 200px;
+            height: 200px;
+           
+            justify-content: center;
+            align-items: center;
+            border: 1px solid #ccc;
+        }
+        .house-plan input{
+            border-radius: 20px;
+            border-color: blue;
+        }
+
+        .house-plan img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        /* Buttons */
+        .buttons {
+            margin-top: 200px;
+
+        }
+
+        .buttons button {
+            padding: 10px 20px;
+            margin: 5px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .buttons button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .sidebar {
+                width: 100%;
+                box-shadow: none;
+            }
+
+            .main-content {
+                padding-top: 0;
+            }
+
+            .container {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .navbar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .navbar .logo, .navbar .user-profile {
+                margin-bottom: 10px;
+            }
+
+            .navbar .name {
+                font-size: 1.2em;
+            }
+
+            .house-plan {
+                width: 100px;
+                height: 100px;
+            }
+
+            .buttons button {
+                padding: 8px 16px;
+                margin: 3px;
+            }
+        }
